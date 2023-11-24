@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service StreamService {
+  rpc FetchResponse (StreamRequest) returns (stream StreamResponse) {}
+}
+
+message StreamRequest {
+  int32 id = 1;
+}
+
+message StreamResponse {
+  string name = 1;
+  string address = 2;
+  int32 age = 3;
+  repeated string course = 4;
+}
